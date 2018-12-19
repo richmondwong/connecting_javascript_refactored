@@ -24,10 +24,9 @@ client.connect((err) => {
     }
     // console.log("This is inside connect: ", result.rows[0].number); //output: 1
 
-    console.log('Found ' + result.rowCount + ' person(s) by the name of ' + input);
     console.log('Searching ...');
+    console.log('Found ' + result.rowCount + ' person(s) by the name of ' + input);
     var counter = 1;
-    var personCounter = 0;
 
     for (var x in result.rows){
       console.log("- " + counter + ": " + result.rows[x]['first_name'] + " " + result.rows[x]['last_name'] + ", born " + result.rows[x]['birthdate'].toString().substring(0,15));
