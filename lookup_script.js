@@ -10,9 +10,7 @@ const client = new pg.Client({
   ssl      : settings.ssl
 });
 
-
 const input = process.argv.slice(2).toString()
-
 
 client.connect((err) => {
   if (err) {
@@ -22,8 +20,6 @@ client.connect((err) => {
     if (err) {
       return console.error("error running query", err);
     }
-    // console.log("This is inside connect: ", result.rows[0].number); //output: 1
-
     console.log('Searching ...');
     console.log('Found ' + result.rowCount + ' person(s) by the name of ' + input);
     var counter = 1;
